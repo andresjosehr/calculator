@@ -1,0 +1,73 @@
+@import 'src/variables.scss';
+.calculator{
+  .header{
+    color: $textWhite;
+  }
+  .display{
+    overflow-x: scroll;
+  }
+  .display::-webkit-scrollbar{
+    display: none;
+  }
+  .display{
+    background-color: $screenBackground;
+    text-align: right;
+    .display-value{
+      color: $textWhite;
+      min-height: 36px;
+    }
+    .display-value-inner{
+      color: $textWhite;
+    }
+  }
+  .keypad{
+    background-color: $toggleBackground2;
+    .keypad-button{
+      font-size: 32px;
+      background: $lightGrayishOrangeKeyBackground;
+      color: $textveryDarkGrayishBlue;
+      text-align: center;
+      border-radius: 8px;
+      font-weight: 700;
+      border-bottom-color: $grayishOrangeKeyShadow;
+      border-bottom-width: 3px;
+      cursor: pointer;
+    }
+    .keypad-button-equal{
+      background: $redKeyBackground;
+      color: $textWhite;
+      border-bottom-color: $darkRedKeyShadow;
+      border-bottom-width: 3px;
+    }
+    .keypad-button-reset{
+      color: $textWhite;
+      background: $keyBackground;
+      border-bottom-color: $keyShadow;
+      border-bottom-width: 3px;
+    }
+
+    .keypad-button-equal, .keypad-button-reset{
+      font-size: 22px;
+      font-weight: 700;
+      min-height: 50px;
+      padding: 10px 0;
+    }
+  }
+}
+
+@media (min-width: 639px) {
+  .calculator{
+    width: 30rem;
+  }
+}
+@media (max-width: 639px) {
+  .calculator{
+    .display-value-inner{
+      font-size: 12vw;
+    }
+    .keypad-button-delete{
+      font-size: 1.5rem !important;
+      padding: 5.5px 0 !important;
+    }
+  }
+}

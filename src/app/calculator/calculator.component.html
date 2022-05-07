@@ -1,0 +1,39 @@
+<div class="calculator m-auto w-11/12- sm:w-11/12 h-fit absolute left-0 right-0 top-0 bottom-0">
+  <div class="header mb-6">
+    <div class="text text-3xl font-bold">Calc</div>
+    <div class="theme-switcher"></div>
+  </div>
+  <div class="display text-right mb-6 rounded-lg p-3">
+    <div class="display-value text-3xl font-bold w-fit ml-auto">{{prevDisplay}}</div>
+    <div class="display-value-inner text-7xl font-bold w-fit ml-auto">{{currentValue}}</div>
+  </div>
+  <div class="keypad rounded-lg p-6 sm:p-3">
+    <div class="keypad-row grid grid-cols-4 gap-5 mb-5 sm:gap-3 sm:mb-3">
+      <div (click)="pickNumber('7')" class="keypad-button keypad-button-clear">7</div>
+      <div (click)="pickNumber('8')" class="keypad-button keypad-button-divide">8</div>
+      <div (click)="pickNumber('9')" class="keypad-button keypad-button-multiply">9</div>
+      <div (click)='deleteKey()' class="keypad-button keypad-button-delete text-5x1 keypad-button-subtract">DEL</div>
+    </div>
+    <div class="keypad-row grid grid-cols-4 gap-6 mb-6 sm:gap-3 sm:mb-3">
+      <div (click)="pickNumber('4')" class="keypad-button keypad-button-seven">4</div>
+      <div (click)="pickNumber('5')" class="keypad-button keypad-button-eight">5</div>
+      <div (click)="pickNumber('6')" class="keypad-button keypad-button-nine">6</div>
+      <div (click)="pickOperator('+')" class="keypad-button keypad-button-add">+</div>
+    </div>
+    <div class="keypad-row grid grid-cols-4 gap-6 mb-6 sm:gap-3 sm:mb-3">
+      <div (click)="pickNumber('1')" class="keypad-button keypad-button-four">1</div>
+      <div (click)="pickNumber('2')" class="keypad-button keypad-button-five">2</div>
+      <div (click)="pickNumber('3')" class="keypad-button keypad-button-six">3</div>
+      <div (click)="pickOperator('-')" class="keypad-button keypad-button-equals">-</div>
+    </div>
+    <div class="keypad-row grid grid-cols-4 gap-6 mb-6 sm:gap-3 sm:mb-3">
+      <div (click)="pickDecimal()" class="keypad-button keypad-button-one">.</div>
+      <div (click)="pickNumber('0')" class="keypad-button keypad-button-two">0</div>
+      <div (click)="pickOperator('/')" class="keypad-button keypad-button-three">/</div>
+      <div (click)="pickOperator('*')" class="keypad-button keypad-button-zero">x</div>
+    </div>
+    <div class="keypad-row grid grid-cols-2 gap-6 sm:gap-3">
+      <div (click)='reset()' class="keypad-button keypad-button-reset">RESET</div>
+      <div (click)="calculate()" class="keypad-button keypad-button-equal">=</div>
+    </div>
+</div>
